@@ -1,29 +1,29 @@
 'use strict';
 
-let leftArrow = document.querySelector('.previous');
-let rightArrow = document.querySelector('.next');
-let count = 0;
+const leftArrow = document.querySelector('.previous');
+const rightArrow = document.querySelector('.next');
+const gallery = document.querySelector('.galery')
+const count = 420;
 leftArrow.classList.add('disabled')
 rightArrow.addEventListener('click', function(event){
-    count += 420;
-    document.querySelector('.galery').scrollLeft += 420;
-    if (count >= 420) {
+    gallery.scrollLeft += count;
+    if (gallery.scrollLeft >= 980) {
+        gallery.scrollLeft = 980;
+        rightArrow.classList.add('disabled');
+    } else {
         leftArrow.classList.remove('disabled');
     }
-    if (count >= 1260) {
-        count = 1260;
-        rightArrow.classList.add('disabled');
-    }
+    console.log(gallery.scrollLeft)
 });
 
 leftArrow.addEventListener('click', function(event) {
-    count -= 420;
-    document.querySelector('.galery').scrollLeft -= 420;
-    if (count <= 0) {
-        count = 0;
+    gallery.scrollLeft -= count;
+    if (gallery.scrollLeft <= 0) {
+        gallery.scrollLeft = 0;
         leftArrow.classList.add('disabled');
-    }
-    if (count <= 840) {
+    } else {
         rightArrow.classList.remove('disabled');
     }
+    console.log(gallery.scrollLeft)
 });
+console.log(gallery.scrollLeft)

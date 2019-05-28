@@ -26,13 +26,15 @@ body {
 
 .arrow {
     font-size: 28px;
-    color: black;
-    width: 20px;
+    color: rgba(56, 56, 56, 0.95);
+    width: 40px;
     position: absolute;
-    line-height: 150px;
+    line-height: 145px;
     text-align: center;
     background-color: #9498b3;
     padding: 0 10px;
+    border-radius: 5px;
+    user-select: none;
 }
 
 .arrow:hover {
